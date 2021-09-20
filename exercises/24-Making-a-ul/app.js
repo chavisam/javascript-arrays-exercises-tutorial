@@ -8,23 +8,33 @@ let allColors = [
 	{label: 'Purple', sexy: false},
 ];
 
+
+
 function generateLI(color){
-	// your code here
+	
+	return '<li>' + color.label + '</li>'
 }
 
+
+
 function filterColors(color){
-	// your code here
+	
+	if(color.sexy == true) return color
 }
+
 
 function generateHTMLFromArray(array){
 	
 	let filteredOptions = array.filter(filterColors);
 	let LIs = filteredOptions.map(generateLI);
 
+
 	let htmlString = '<ul>';
 	LIs.forEach(function(elm){
 		htmlString += elm;
 	})
+
+
 	htmlString += '</ul>';
 	return htmlString;
 }
